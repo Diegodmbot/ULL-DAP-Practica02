@@ -1,6 +1,6 @@
 import  CSVManager.CSVFile;
 import URLManager.HTTPFileDownloader;
-
+import Graphs.*;
 import java.util.Scanner;
 
 public class Main {
@@ -18,5 +18,15 @@ public class Main {
         String[] contents = HTTPFileDownloader.downloadFromURL(url).split("\n");
         CSVFile data = new CSVFile(contents);
         data.print();
+        // Mostrar gráfica
+//        System.out.println("Introduce el tipo de gráfica (bar/line):");
+//        String type = sc.nextLine();
+//        Chart chart;
+//        if (type.equals("bar")) {
+//            chart = new BarChart();
+//        } else {
+//            chart = new LineChart();
+//        }
+//        chart.display();
     }
 }
