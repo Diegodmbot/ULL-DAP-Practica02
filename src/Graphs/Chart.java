@@ -4,8 +4,11 @@ import org.jfree.ui.ApplicationFrame;
 
 public abstract class Chart extends ApplicationFrame {
     iCreateDataBase createDataBase;
-    public Chart(String applicationTitle) {
+    int xAxis, yAxis;
+    public Chart(String applicationTitle, int xAxis, int yAxis) {
         super(applicationTitle);
+        this.xAxis = xAxis;
+        this.yAxis = yAxis;
     }
     public abstract void display();
 }

@@ -7,8 +7,6 @@ public class Main {
     /**
      * Enlace para descargar el archivo CSV
      * https://cnecovid.isciii.es/covid19/resources/hosp_uci_def_sexo_edad_provres_todas_edades.csv
-     * Descargar csv pequeños
-     * https://www.stats.govt.nz/large-datasets/csv-files-for-download/
      */
     public static void main(String[] args) {
         // Introducir archivo para descargar
@@ -19,13 +17,18 @@ public class Main {
         System.out.println("Downloading from: " + url);
         String[] contents = HTTPFileDownloader.downloadFromURL(url).split("\n");
         CSVFile data = new CSVFile(contents);
-        data.print();
-        // Mostrar gráfica
+        // data.print();
+        // Crear gráfica
         System.out.println("Introduce el tipo de gráfica (bar/line):");
         String type = sc.nextLine();
+        System.out.println("Introduce el indice del eje X:");
+        Integer xAxis = Integer.valueOf(sc.nextLine());
+        System.out.println("Introduce el indice del eje Y:");
+        Integer yAxis = Integer.valueOf(sc.nextLine());
         Chart chart;
-        if (type.equals("bar")) chart = new BarChart("Covid", "Covid");
-        else chart = new LineChart("Covid", "Covid");
+        if (type.equals("bar")) chart = new BarChart("Practica02", "Practica02", data, xAxis, yAxis);
+        else chart = new LineChart("Practica02", "Practica02", data, xAxis, yAxis);
+        // Mostrar gráfica
         chart.display();
     }
 }

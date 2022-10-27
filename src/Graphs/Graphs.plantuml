@@ -2,69 +2,63 @@
 
 title __GRAPHS's Class Diagram__\n
 
-  namespace  {
-    namespace ractica02.Graphs {
-      class Practica02.Graphs.BarChart {
+
+    namespace raphs {
+      class Graphs.BarChart {
           + BarChart()
           + display()
       }
     }
-  }
+
   
 
-  namespace  {
-    namespace ractica02.Graphs {
-      class Practica02.Graphs.BarChartDataBase {
+    namespace raphs {
+      class Graphs.BarChartDataBase {
           + createDataBase()
       }
     }
-  }
+
   
 
-  namespace  {
-    namespace ractica02.Graphs {
-      abstract class Practica02.Graphs.Chart {
+    namespace raphs {
+      abstract class Graphs.Chart {
           + Chart()
           {abstract} + display()
       }
     }
-  }
+
   
 
-  namespace  {
-    namespace ractica02.Graphs {
-      class Practica02.Graphs.LineChart {
+    namespace raphs {
+      class Graphs.LineChart {
           + LineChart()
           + display()
       }
     }
-  }
-  
 
-  namespace  {
-    namespace ractica02.Graphs {
-      class Practica02.Graphs.LineChartDataBase {
+
+    namespace raphs {
+      class Graphs.LineChartDataBase {
           + createDataBase()
       }
     }
-  }
+
   
 
-  namespace  {
-    namespace ractica02.Graphs {
-      interface Practica02.Graphs.iCreateDataBase {
+    namespace raphs {
+      interface Graphs.iCreateDataBase {
           {abstract} + createDataBase()
       }
     }
-  }
+
   
 
-  Practica02.Graphs.BarChart -up-|> Practica02.Graphs.Chart
-  Practica02.Graphs.BarChartDataBase .up.|> Practica02.Graphs.iCreateDataBase
-  Practica02.Graphs.Chart -up-|> org.jfree.ui.ApplicationFrame
-  Practica02.Graphs.Chart o-- Practica02.Graphs.iCreateDataBase : createDataBase
-  Practica02.Graphs.LineChart -up-|> Practica02.Graphs.Chart
-  Practica02.Graphs.LineChartDataBase .up.|> Practica02.Graphs.iCreateDataBase
+  Graphs.BarChart -up-|> Graphs.Chart
+  Graphs.BarChartDataBase .up.|> Graphs.iCreateDataBase
+  Graphs.Chart -up-|> org.jfree.ui.ApplicationFrame
+  Graphs.Chart o-- Graphs.iCreateDataBase : createDataBase
+  Graphs.LineChart -up-|> Graphs.Chart
+  Graphs.LineChartDataBase .up.|> Graphs.iCreateDataBase
 
 
 right footer

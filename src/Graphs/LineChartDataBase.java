@@ -1,18 +1,20 @@
 package Graphs;
 
+import CSVManager.CSVFile;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 public class LineChartDataBase implements iCreateDataBase {
     @Override
-    public CategoryDataset createDataBase() {
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset( );
-        dataset.addValue( 15 , "schools" , "1970" );
-        dataset.addValue( 30 , "schools" , "1980" );
-        dataset.addValue( 60 , "schools" ,  "1990" );
-        dataset.addValue( 120 , "schools" , "2000" );
-        dataset.addValue( 240 , "schools" , "2010" );
-        dataset.addValue( 300 , "schools" , "2014" );
+    public CategoryDataset createDataBase(CSVFile file, int xAxis, int yAxis) {
+        System.out.println("Entra");
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        // Get the x axis values
+        String[] xAxisValues = file.getValuesNonRepeated(xAxis);
+        for (int i = 0; i < xAxisValues.length; i++) {
+            // Get the sum of y axis by x axis
+            for
+        }
         return dataset;
     }
 }

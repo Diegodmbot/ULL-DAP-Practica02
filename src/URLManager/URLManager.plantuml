@@ -2,15 +2,15 @@
 
 title __URLMANAGER's Class Diagram__\n
 
-  namespace  {
-    namespace ractica02.URLManager {
-      class Practica02.URLManager.HTTPFileDownloader {
+
+    namespace RLManager {
+      class URLManager.HTTPFileDownloader {
           {static} - BUFFER_SIZE : int
           {static} + downloadFromURL()
           - HTTPFileDownloader()
       }
     }
-  }
+
   
 
 

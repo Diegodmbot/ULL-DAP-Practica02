@@ -2,9 +2,9 @@
 
 title __CSVMANAGER's Class Diagram__\n
 
-  namespace  {
-    namespace ractica02.CSVManager {
-      class Practica02.CSVManager.CSVFile {
+
+    namespace SVManager {
+      class CSVManager.CSVFile {
           {static} + SEPARATOR : String
           - headers : String
           - records : ArrayList<ArrayList<String>>
@@ -12,7 +12,7 @@ title __CSVMANAGER's Class Diagram__\n
           + print()
       }
     }
-  }
+
   
 
 
