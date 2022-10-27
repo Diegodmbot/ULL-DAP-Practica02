@@ -1,10 +1,12 @@
-import  CSVManager.CSVFile;
+import java.util.Scanner;
+import CSVManager.CSVFile;
 import URLManager.HTTPFileDownloader;
 import Graphs.*;
-import java.util.Scanner;
 
 public class Main {
     /**
+     * Enlace para descargar el archivo CSV
+     * https://cnecovid.isciii.es/covid19/resources/hosp_uci_def_sexo_edad_provres_todas_edades.csv
      * Descargar csv pequeños
      * https://www.stats.govt.nz/large-datasets/csv-files-for-download/
      */
@@ -19,14 +21,11 @@ public class Main {
         CSVFile data = new CSVFile(contents);
         data.print();
         // Mostrar gráfica
-//        System.out.println("Introduce el tipo de gráfica (bar/line):");
-//        String type = sc.nextLine();
-//        Chart chart;
-//        if (type.equals("bar")) {
-//            chart = new BarChart();
-//        } else {
-//            chart = new LineChart();
-//        }
-//        chart.display();
+        System.out.println("Introduce el tipo de gráfica (bar/line):");
+        String type = sc.nextLine();
+        Chart chart;
+        if (type.equals("bar")) chart = new BarChart("Covid", "Covid");
+        else chart = new LineChart("Covid", "Covid");
+        chart.display();
     }
 }
