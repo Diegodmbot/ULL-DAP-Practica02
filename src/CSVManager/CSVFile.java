@@ -18,28 +18,20 @@ public class CSVFile {
     public ArrayList<String> getHeaders() {
         return headers;
     }
-    public String getRecords(int i, int j) {
+    public String getValue(int i, int j) {
         return records.get(i).get(j);
     }
-    public String[] getValuesNonRepeated(int i) {
+    public int getSize() {
+        return records.size();
+    }
+    public String[] getValuesNonRepeated(int xAxis) {
         ArrayList<String> values = new ArrayList<>();
         for (int j = 0; j < records.size(); j++) {
-            if (!values.contains(records.get(j).get(i))) {
-                values.add(records.get(j).get(i));
+            if (!values.contains(records.get(j).get(xAxis))) {
+                values.add(records.get(j).get(xAxis));
             }
         }
         return values.toArray(new String[0]);
-    }
-    public int[] getSumOfValuesByColumn(int xAxis, int yAxis) {
-        int[] sumOfValues = new int[getValuesNonRepeated(xAxis).length];
-        for (int i = 0; i < records.size(); i++) {
-            for (int j = 0; j < getValuesNonRepeated(xAxis).length; j++) {
-                if (records.get(i).get(xAxis).equals(getValuesNonRepeated(xAxis)[j])) {
-                    sumOfValues[j] += Integer.parseInt(records.get(i).get(yAxis));
-                }
-            }
-        }
-        return sumOfValues;
     }
     public void print() {
         System.out.println(headers);
