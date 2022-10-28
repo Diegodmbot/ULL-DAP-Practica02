@@ -1,6 +1,6 @@
-package Graphs;
+package Practica2.Graphs;
 
-import CSVManager.CSVFile;
+import Practica2.CSVManager.CSVFile;
 import org.jfree.data.category.CategoryDataset;
 
 public interface iCreateDataBase {

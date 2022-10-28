@@ -1,4 +1,4 @@
-package CSVManager;
+package Practica2.CSVManager;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,14 +1,13 @@
-package Graphs;
+package Practica2.Graphs;
 
-import CSVManager.CSVFile;
+import Practica2.CSVManager.CSVFile;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-
-public class LineChartDataBase implements iCreateDataBase {
+public class BarChartDataBase implements iCreateDataBase {
     @Override
     public CategoryDataset createDataBase(CSVFile file, int xAxis, int yAxis) {
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset( );
         String[] xAxisValues = file.getValuesNonRepeated(xAxis);
         for (int i = 0; i < xAxisValues.length; i++) {
             int sum = 0;
@@ -18,7 +17,6 @@ public class LineChartDataBase implements iCreateDataBase {
                 }
             }
             dataset.addValue(sum, file.getValue(i, xAxis), file.getValue(i, yAxis));
-            System.out.println("Sum of " + file.getValue(i, xAxis) + " is " + sum);
         }
         return dataset;
     }

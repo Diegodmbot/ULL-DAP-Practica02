@@ -1,4 +1,4 @@
-package Graphs;
+package Practica2.Graphs;
 
 import org.jfree.ui.ApplicationFrame;
 

@@ -1,7 +1,9 @@
+package Practica2;
+
 import java.util.Scanner;
-import CSVManager.CSVFile;
-import URLManager.HTTPFileDownloader;
-import Graphs.*;
+import Practica2.CSVManager.CSVFile;
+import Practica2.URLManager.HTTPFileDownloader;
+import Practica2.Graphs.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,7 +21,6 @@ public class Main {
         System.out.println("Downloading from: " + url);
         String[] contents = HTTPFileDownloader.downloadFromURL(url).split("\n");
         CSVFile data = new CSVFile(contents);
-        // data.print();
         // Crear gráfica
         System.out.println("Introduce el tipo de gráfica (bar/line):");
         String type = sc.nextLine();

@@ -2,17 +2,20 @@
 
 title __CSVMANAGER's Class Diagram__\n
 
-
-    namespace SVManager {
-      class CSVManager.CSVFile {
+  namespace Practica2 {
+    namespace CSVManager {
+      class Practica2.CSVManager.CSVFile {
           {static} + SEPARATOR : String
-          - headers : String
+          - headers : ArrayList<String>
           - records : ArrayList<ArrayList<String>>
           + CSVFile()
-          + print()
+          + getHeaders()
+          + getSize()
+          + getValue()
+          + getValuesNonRepeated()
       }
     }
-
+  }
   
 
 
