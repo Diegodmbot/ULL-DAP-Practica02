@@ -4,15 +4,17 @@ import URLManager.HTTPFileDownloader;
 import Graphs.*;
 
 public class Main {
-    /**
-     * Enlace para descargar el archivo CSV
-     * https://cnecovid.isciii.es/covid19/resources/hosp_uci_def_sexo_edad_provres_todas_edades.csv
-     */
     public static void main(String[] args) {
         // Introducir archivo para descargar
         Scanner sc=new Scanner(System.in);
+        String url;
+        if (args.length == 0) {
+            System.out.println("Introduce la URL del archivo CSV:");
+            url = sc.nextLine();
+        } else {
+            url = args[0];
+        }
         System.out.println("Introduce la URL del archivo CSV:");
-        String url = sc.nextLine();
         // Descargar archivo
         System.out.println("Downloading from: " + url);
         String[] contents = HTTPFileDownloader.downloadFromURL(url).split("\n");
@@ -22,9 +24,9 @@ public class Main {
         System.out.println("Introduce el tipo de gráfica (bar/line):");
         String type = sc.nextLine();
         System.out.println("Introduce el indice del eje X:");
-        Integer xAxis = Integer.valueOf(sc.nextLine());
+        int xAxis = Integer.parseInt(sc.nextLine());
         System.out.println("Introduce el indice del eje Y:");
-        Integer yAxis = Integer.valueOf(sc.nextLine());
+        int yAxis = Integer.parseInt(sc.nextLine());
         Chart chart;
         if (type.equals("bar")) chart = new BarChart("Practica02", "Practica02", data, xAxis, yAxis);
         else chart = new LineChart("Practica02", "Practica02", data, xAxis, yAxis);

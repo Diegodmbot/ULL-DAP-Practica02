@@ -26,18 +26,11 @@ public class CSVFile {
     }
     public String[] getValuesNonRepeated(int xAxis) {
         ArrayList<String> values = new ArrayList<>();
-        for (int j = 0; j < records.size(); j++) {
-            if (!values.contains(records.get(j).get(xAxis))) {
-                values.add(records.get(j).get(xAxis));
+        for (ArrayList<String> record : records) {
+            if (!values.contains(record.get(xAxis))) {
+                values.add(record.get(xAxis));
             }
         }
         return values.toArray(new String[0]);
     }
-    public void print() {
-        System.out.println(headers);
-        for (ArrayList<String> record : records) {
-            System.out.println(String.join(SEPARATOR, record));
-        }
-    }
-
 }

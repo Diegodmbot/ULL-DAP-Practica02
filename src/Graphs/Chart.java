@@ -2,9 +2,6 @@ package Graphs;
 
 import org.jfree.ui.ApplicationFrame;
 
-import java.util.ArrayList;
-import java.util.Map;
-
 public abstract class Chart extends ApplicationFrame {
     iCreateDataBase createDataBase;
     int xAxis, yAxis;

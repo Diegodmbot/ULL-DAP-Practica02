@@ -4,13 +4,11 @@ import CSVManager.CSVFile;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-import java.util.Arrays;
 
 public class LineChartDataBase implements iCreateDataBase {
     @Override
     public CategoryDataset createDataBase(CSVFile file, int xAxis, int yAxis) {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        // Guarda los valores de la columna X
         String[] xAxisValues = file.getValuesNonRepeated(xAxis);
         for (int i = 0; i < xAxisValues.length; i++) {
             int sum = 0;

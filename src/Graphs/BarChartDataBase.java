@@ -7,31 +7,17 @@ import org.jfree.data.category.DefaultCategoryDataset;
 public class BarChartDataBase implements iCreateDataBase {
     @Override
     public CategoryDataset createDataBase(CSVFile file, int xAxis, int yAxis) {
-        final String fiat = "FIAT";
-        final String audi = "AUDI";
-        final String ford = "FORD";
-        final String speed = "Speed";
-        final String millage = "Millage";
-        final String userrating = "User Rating";
-        final String safety = "safety";
-        final DefaultCategoryDataset dataset =
-                new DefaultCategoryDataset( );
-
-        dataset.addValue( 1.0 , fiat , speed );
-        dataset.addValue( 3.0 , fiat , userrating );
-        dataset.addValue( 5.0 , fiat , millage );
-        dataset.addValue( 5.0 , fiat , safety );
-
-        dataset.addValue( 5.0 , audi , speed );
-        dataset.addValue( 6.0 , audi , userrating );
-        dataset.addValue( 10.0 , audi , millage );
-        dataset.addValue( 4.0 , audi , safety );
-
-        dataset.addValue( 4.0 , ford , speed );
-        dataset.addValue( 2.0 , ford , userrating );
-        dataset.addValue( 3.0 , ford , millage );
-        dataset.addValue( 6.0 , ford , safety );
-
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset( );
+        String[] xAxisValues = file.getValuesNonRepeated(xAxis);
+        for (int i = 0; i < xAxisValues.length; i++) {
+            int sum = 0;
+            for (int j = 0; j < file.getSize(); j++) {
+                if (file.getValue(j, xAxis).equals(xAxisValues[i])) {
+                    sum += Integer.parseInt(file.getValue(j, yAxis));
+                }
+            }
+            dataset.addValue(sum, file.getValue(i, xAxis), file.getValue(i, yAxis));
+        }
         return dataset;
     }
 }
